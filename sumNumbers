@@ -1,0 +1,32 @@
+public int sumNumbers(String str) {
+  int a=0;
+  int m=0;
+  for(int i=0;i<str.length()-1;i++){
+    if(Character.isDigit(str.charAt(i))){
+      if(Character.isDigit(str.charAt(i+1))){
+      a=a*10+Integer.parseInt(str.substring(i,i+1));
+      }
+    else{
+       a=a*10+Integer.parseInt(str.substring(i,i+1));
+     }
+          if(i==str.length()-2&& Character.isDigit(str.charAt(i+1))){
+        m=m+a*10;
+          }
+          else if(i==str.length()-2&& !Character.isDigit(str.charAt(i+1))){
+        m=m+a;
+          }
+       
+    }
+    else{
+           m=m+a;
+      a=0;
+      
+    }
+  }if(str.length()>0)
+  {if(Character.isDigit(str.charAt(str.length()-1)))
+  return m+Integer.parseInt(str.substring(str.length()-1,str.length()));
+  else
+  return m;
+  }
+  return 0;
+}
