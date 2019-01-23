@@ -1,0 +1,22 @@
+public int maxBlock(String str) {
+  int l=1;
+  int m=0;
+  for(int i=0;i<str.length()-1;i++){
+    if(str.charAt(i)==str.charAt(i+1)){
+      l++;
+       if(l>m){                                  //only for the last loop if it has repetitive elements
+          m=l;
+        }
+    }
+    else{
+      if(l>0){
+        if(l>m){
+          m=l;
+        }
+        l=1;
+      }
+      
+    }
+  }
+  return m;
+}
